@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UV Index</title>
+  <link rel="stylesheet" type="text/css" href="../public/style.css">
+
+</head>
+<body>
+   <div class="container">
+    <h1>UV Index Checker</h1>
+    <% if (uv !== null) { %>
+      <div class="uv-box">
+        <h2>UV Index: <%= uv.toFixed(1) %></h2>
+        <p><%= message %></p>
+      </div>
+    <% } else { %>
+      <p><%= message %></p>
+    <% } %>
+  </div>
+</body>
+</html>
