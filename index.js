@@ -3,6 +3,7 @@
 
 import express from "express";
 import axios from "axios";
+import 'dotenv/config';
 const app = express();
 const port = 3000;
 
@@ -18,7 +19,7 @@ app.get("/", async (req, res) => {
     const latitude = 43.65; // TORONTO
     const longitude = -79.38;
     const response = await axios.get(`https://api.openuv.io/api/v1/uv?lat=${latitude}&lng=${longitude}`, {
-      headers: { 'x-access-token': apiKey }
+      headers: { 'x-access-token': process.env.apiKey }
     });
 
     const uv = response.data.result.uv;
